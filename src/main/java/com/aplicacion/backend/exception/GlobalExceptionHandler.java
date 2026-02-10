@@ -31,4 +31,14 @@ public class GlobalExceptionHandler {
         // Devuelve un mapa con los errores y el estado HTTP 400 (Bad Request)
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }
+
+    // Manejo de excepciones genéricas para depuración (devuelve 500 y el mensaje de
+    // error)
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<Map<String, String>> handleAllExceptions(Exception ex) {
+        Map<String, String> error = new HashMap<>();
+        error.put("error", "Error interno del servidor");
+        error.put("message", ex.getMessage()); // Incluimos el mensaje técnico para depurar
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
 }

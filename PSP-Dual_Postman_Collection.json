@@ -1,0 +1,573 @@
+{
+	"info": {
+		"_postman_id": "b8f52075-104e-4f59-a2e6-5f336671048b",
+		"name": "PSP-Dual API",
+		"description": "Colección de Postman para probar la API de Gestión de Empleados (PSP-Dual).\n\nIncluye autenticación básica preconfigurada (admin/admin).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Empleados",
+			"item": [
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/empleados",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/empleados/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Empleado",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Nuevo\",\n    \"apellido\": \"Empleado\",\n    \"dniNie\": \"99999999Z\",\n    \"emailCorp\": \"nuevo.empleado@empresa.com\",\n    \"telefono\": \"666777888\",\n    \"fechaContratacion\": \"2024-01-01\",\n    \"idPuesto\": 1,\n    \"idDepartamento\": 1,\n    \"estado\": \"ACTIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/empleados",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Empleado",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Empleado\",\n    \"apellido\": \"Actualizado\",\n    \"dniNie\": \"99999999Z\",\n    \"emailCorp\": \"actualizado@empresa.com\",\n    \"telefono\": \"666000000\",\n    \"fechaContratacion\": \"2024-01-01\",\n    \"idPuesto\": 2,\n    \"idDepartamento\": 2,\n    \"estado\": \"ACTIVO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/empleados/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Empleado",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/empleados/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"empleados",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Puestos",
+			"item": [
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/puestos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"puestos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/puestos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"puestos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Puesto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tituloPuesto\": \"Nuevo Puesto Tech\",\n    \"salarioMin\": 25000,\n    \"salarioMax\": 45000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/puestos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"puestos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Puesto",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tituloPuesto\": \"Puesto Editado\",\n    \"salarioMin\": 26000,\n    \"salarioMax\": 46000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/puestos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"puestos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Puesto",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/puestos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"puestos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Departamentos",
+			"item": [
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/departamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Por ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/departamentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Departamento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"I+D\",\n    \"idGerente\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/departamentos",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Departamento",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Investigación\",\n    \"idGerente\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/departamentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Departamento",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/departamentos/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"departamentos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Historial Salarios",
+			"item": [
+				{
+					"name": "Obtener Todos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/historial-salarios",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"historial-salarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crear Historial",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idEmpleado\": 1,\n    \"salarioMensual\": 32000,\n    \"fechaDesde\": \"2024-02-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/historial-salarios",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"historial-salarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Historial",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idEmpleado\": 1,\n    \"salarioMensual\": 33000,\n    \"fechaDesde\": \"2024-02-01\",\n    \"fechaHasta\": \"2024-12-31\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/historial-salarios/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"historial-salarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Historial",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/historial-salarios/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"historial-salarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Asistencias",
+			"item": [
+				{
+					"name": "Obtener Todas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/asistencias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"asistencias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Asistencia",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idEmpleado\": 1,\n    \"fecha\": \"2024-02-10\",\n    \"horaEntrada\": \"08:00:00\",\n    \"horaSalida\": \"16:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/asistencias",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"asistencias"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Asistencia",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"idEmpleado\": 1,\n    \"fecha\": \"2024-02-10\",\n    \"horaEntrada\": \"08:30:00\",\n    \"horaSalida\": \"17:30:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/asistencias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"asistencias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Asistencia",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/asistencias/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"asistencias",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "admin",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8081/api",
+			"type": "string"
+		}
+	]
+}
